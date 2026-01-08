@@ -1,9 +1,10 @@
 import { AntDesign, FontAwesome } from "@expo/vector-icons";
 import { Stack } from "expo-router";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-// TODO: setup themed text just like from app example.
+import { ThemedText } from "@/components/ui/themed-text";
+
 export default function RootLayout() {
   return (
     <Stack
@@ -18,16 +19,17 @@ export default function RootLayout() {
                 alignItems: "center",
               }}
             >
-              <FontAwesome name="bullseye" size={24} />
+              <FontAwesome name="bullseye" size={30} />
               <View style={{ display: "flex", flexDirection: "column" }}>
-                <Text {...props} style={{ fontSize: 25 }}>
-                  Lotto Results
-                </Text>
-                <Text {...props}>Wednesday, January 7, 2026</Text>
+                <ThemedText type="title">Lotto Results</ThemedText>
+
+                <ThemedText type="default">
+                  Wednesday, January 7, 2026
+                </ThemedText>
               </View>
               <AntDesign
                 name="api"
-                size={24}
+                size={30}
                 color="red"
                 style={{ marginLeft: "auto" }}
               />
