@@ -9,6 +9,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, useColorScheme } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import DateTime from "@/components/results/DateTime";
 import { ThemedText } from "@/components/ui/themed-text";
 import { ThemedView } from "@/components/ui/themed-view";
 import { useThemeColor } from "@/hooks/use-theme-color";
@@ -23,14 +24,7 @@ export default function RootLayout() {
         <FontAwesome name="bullseye" size={30} style={styles.iconLeft} />
         <ThemedView style={styles.column}>
           <ThemedText type="title">Lotto Results</ThemedText>
-          <ThemedText type="default">
-            {new Date().toLocaleDateString("en-US", {
-              weekday: "long",
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })}
-          </ThemedText>
+          <DateTime />
         </ThemedView>
         <AntDesign name="api" size={30} color="red" style={styles.iconRight} />
       </ThemedView>
