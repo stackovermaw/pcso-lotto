@@ -1,5 +1,5 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 
 import { ThemedText } from "@/components/ui/themed-text";
 import { ThemedView } from "@/components/ui/themed-view";
@@ -7,6 +7,16 @@ import { ThemedView } from "@/components/ui/themed-view";
 const styles = StyleSheet.create({
   wrapper: {
     padding: 10,
+  },
+  scrollView: {
+    marginHorizontal: 20,
+    marginVertical: 25,
+  },
+  game: {
+    backgroundColor: "#e6e9ee",
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 16,
   },
 });
 
@@ -52,6 +62,8 @@ export default function Index() {
               style={{
                 textTransform: "uppercase",
                 lineHeight: 16,
+                fontSize: 12,
+                color: "white",
               }}
             >
               Today
@@ -60,6 +72,47 @@ export default function Index() {
         </ThemedView>
         <FontAwesome name="chevron-right" size={16} color="black" />
       </ThemedView>
+      <ScrollView
+        horizontal={true}
+        style={styles.scrollView}
+        contentContainerStyle={{ gap: 16 }}
+      >
+        <TouchableOpacity onPress={() => {}}>
+          <ThemedText
+            style={{
+              ...styles.game,
+              backgroundColor: "#11ad32",
+              color: "white",
+            }}
+          >
+            All Games
+          </ThemedText>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
+          <ThemedText style={styles.game}>6/58 Ultra</ThemedText>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
+          <ThemedText style={styles.game}>6/49 Super</ThemedText>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
+          <ThemedText style={styles.game}>6/42 Lotto</ThemedText>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
+          <ThemedText style={styles.game}>6D</ThemedText>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
+          <ThemedText style={styles.game}>4D</ThemedText>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
+          <ThemedText style={styles.game}>3D</ThemedText>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
+          <ThemedText style={styles.game}>2D</ThemedText>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
+          <ThemedText style={styles.game}>STL</ThemedText>
+        </TouchableOpacity>
+      </ScrollView>
     </ThemedView>
   );
 }
